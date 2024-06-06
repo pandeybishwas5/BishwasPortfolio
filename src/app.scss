@@ -1,0 +1,36 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+body{
+    background-color: #F9F9F9;
+    color: #1C1C1E;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+section{
+    height: 100vh;
+    scroll-snap-align: center;
+    
+}
+
+  
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
