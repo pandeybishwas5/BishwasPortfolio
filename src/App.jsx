@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Services from './components/services/Services';
 import ParallaxComponent from './components/parallax/ParallaxComponent';
 import Portfolio from './components/portfolio/Portfolio';
+import Contact from './components/contact/Contact';
 
 const App = () => {
   return (
@@ -19,10 +20,11 @@ const App = () => {
       <section>
         <Services />
       </section>
-      <section id="Portfolio"> 
-        <Portfolio />
+
+      <Portfolio />
+      <section id="Contact">
+        <Contact />
       </section>
-      <section id="Contact">Contact</section>
     </div>
   );
 };

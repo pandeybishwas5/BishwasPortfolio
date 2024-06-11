@@ -14,7 +14,7 @@ const containerVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1.5,
+      duration: 0.5,
       staggerChildren: 0.1,
     },
   },
