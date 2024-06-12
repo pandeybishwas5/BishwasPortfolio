@@ -2,7 +2,7 @@
 
 .parallax {
   width: 100%;
-  height: 100%;
+  height: 100vh; // Ensure it takes the full viewport height
   position: relative;
   display: flex;
   align-items: center;
@@ -11,23 +11,33 @@
 
   h1 {
     font-size: 80px;
-  
-    
+    position: relative;
+    z-index: 12;
 
     @include mobile {
       font-size: 72px;
       text-align: center;
-
     }
   }
 
-  .mountains {
-    background-image: url("mountains.png");
+  .mountains,
+  .jungle1,
+  .jungle2,
+  .jungle3,
+  .jungle4,
+  .jungle5,
+  .logoland,
+  .background,
+  .manonmountain {
     background-size: cover;
     background-position: bottom;
     width: 100%;
     height: 100%;
     position: absolute;
+  }
+
+  .mountains {
+    background-image: url("mountains.png");
     z-index: 4;
 
     @include mobile {
@@ -35,13 +45,10 @@
       background-repeat: no-repeat;
     }
   }
+
   .background {
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 11;
+
     @include mobile {
       background-size: 400%;
       background-repeat: no-repeat;
@@ -50,52 +57,36 @@
 
   .jungle1 {
     background-image: url("/jungle1.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 6;
+
     @include mobile {
       background-size: contain;
       background-repeat: no-repeat;
     }
-
   }
 
   .jungle2 {
     background-image: url("/jungle2.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 7;
+
     @include mobile {
       background-size: contain;
       background-repeat: no-repeat;
     }
-    
   }
 
   .jungle3 {
     background-image: url("jungle3.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 8;
-    
+
+    @include mobile {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 
   .jungle4 {
     background-image: url("jungle4.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
     z-index: 9;
 
     @include mobile {
@@ -106,28 +97,26 @@
 
   .jungle5 {
     background-image: url("jungle5.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
     height: 150%;
-    position: absolute;
     z-index: 10;
 
-
-  }
-
-  .logoland {
-    background-image: url("logo_land.png");
-    background-size: cover;
-    background-position: bottom;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 5;
     @include mobile {
       background-size: contain;
       background-repeat: no-repeat;
     }
+  }
 
+  .logoland {
+    background-image: url("logo_land.png");
+    z-index: 5;
+
+    @include mobile {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .manonmountain {
+    z-index: 12;
   }
 }

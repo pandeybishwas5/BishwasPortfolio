@@ -1,16 +1,15 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import "./services.scss";
-import { motion, useInView } from "framer-motion";
-import { FaCode, FaBrain, FaChartLine, FaLaptopCode } from "react-icons/fa"; // Ensure react-icons is installed
+import { motion, useAnimation } from "framer-motion";
+import { FaCode, FaBrain, FaChartLine, FaLaptopCode } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
-const containerVariants = {
+const variants = {
   initial: {
-    x: -500,
-    y: 100,
+    y: 500,
     opacity: 0,
   },
   animate: {
-    x: 0,
     y: 0,
     opacity: 1,
     transition: {
@@ -18,26 +17,39 @@ const containerVariants = {
       staggerChildren: 0.1,
     },
   },
-};
-
-const itemVariants = {
-  initial: { opacity: 0, y: 50 },
-  animate: { opacity: 1, y: 0 },
+  exit: {
+    y: 500,
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
 };
 
 const Services = () => {
-  const ref = useRef();
-  const isInView = useInView(ref, { margin: "-100px" });
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.2, // Adjust this value as needed
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("animate");
+    } else {
+      controls.start("exit");
+    }
+  }, [controls, inView]);
 
   return (
     <motion.div
       className="services"
       ref={ref}
-      variants={containerVariants}
       initial="initial"
-      animate={isInView ? "animate" : "initial"}
+      animate={controls}
+      variants={variants}
     >
-      <motion.div className="textContainer" variants={itemVariants}>
+      <motion.div className="textContainer" variants={variants}>
         <p>
           I focus on developing innovative solutions
           <br /> that drive business success
@@ -45,7 +57,7 @@ const Services = () => {
         <hr />
       </motion.div>
       
-      <motion.div className="titleContainer" variants={itemVariants}>
+      <motion.div className="titleContainer" variants={variants}>
         <div className="title">
           <img src="/people.webp" alt="People" />
           <h1>
@@ -60,7 +72,7 @@ const Services = () => {
         </div>
       </motion.div>
       
-      <motion.div className="listContainer" variants={itemVariants}>
+      <motion.div className="listContainer" variants={variants}>
         {[
           { title: "Programming Languages", content: "Python, Java, C++, JavaScript", icon: <FaCode /> },
           { title: "Machine Learning Frameworks", content: "TensorFlow, PyTorch, scikit-learn", icon: <FaBrain /> },
@@ -70,7 +82,7 @@ const Services = () => {
           <motion.div
             className="box"
             key={index}
-            variants={itemVariants}
+            variants={variants}
           >
             <div className="icon">{item.icon}</div>
             <h2>{item.title}</h2>

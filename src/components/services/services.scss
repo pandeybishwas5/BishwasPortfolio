@@ -1,5 +1,4 @@
 @import "../../app.scss";
-
 .services {
   padding: 2rem;
   display: flex;
@@ -9,7 +8,6 @@
 
   .textContainer {
     margin-bottom: 1rem;
-    
 
     @include mobile {
       align-self: center;
@@ -18,8 +16,13 @@
     }
 
     p {
-      font-size: 1.5rem;
-      line-height: 1.5;
+      font-weight: 200;
+      font-size: 20px;
+      color: gray;
+
+      @include mobile {
+        font-size: 15px;
+      }
     }
 
     hr {
@@ -33,13 +36,11 @@
       }
     }
   }
-
   .titleContainer {
     flex: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
 
     @include mobile {
       width: 100%;
@@ -48,7 +49,7 @@
     .title {
       display: flex;
       align-items: center;
-      margin: 1rem 0;
+      gap: 50px;
 
       @include mobile {
         flex-direction: column;
@@ -74,7 +75,7 @@
         font-weight: 100;
 
         @include mobile {
-          font-size: 36px;
+          font-size: 30px;
         }
 
         b {
@@ -83,7 +84,6 @@
         }
       }
     }
-
     .techStackBtn {
       padding: 0.5rem 1rem;
       width: 200px;
@@ -142,7 +142,6 @@
       }
     }
   }
-
   .listContainer {
     display: flex;
     flex-wrap: wrap;
@@ -152,6 +151,7 @@
     @include mobile {
       flex-direction: column;
       width: 100%;
+      align-items: center;
     }
 
     .box {
@@ -180,12 +180,6 @@
           color: #fff;
           transform: scale(1.2);
         }
-
-        button {
-          background-color: #fff;
-          color: #ec811b;
-          border-color: #fff;
-        }
       }
 
       .icon {
@@ -193,21 +187,28 @@
         color: #1e3a8a;
         margin-bottom: 1rem;
         transition: transform 0.3s, color 0.3s;
+
+        @include mobile { 
+          font-size: 20px;
+        }
       }
 
       h2 {
         margin: 1rem 0;
+
+        @include mobile { 
+          margin: 0;
+          font-size: 18px;
+        }
       }
 
       p {
-        margin-bottom: 1rem;
+        margin-bottom: 0.2rem;
 
-        @include mobile {
-          display: none;
+        @include mobile { 
+          font-size: 12px;
         }
+      }
       }
     }
   }
-}
-
-
