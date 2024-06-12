@@ -6,10 +6,12 @@ import Services from './components/services/Services';
 import ParallaxComponent from './components/parallax/ParallaxComponent';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
     <div>
+      <ToastContainer />
       <section id="Homepage">
         <Navbar />
         <Hero />
@@ -17,11 +19,10 @@ const App = () => {
       <section id="Services">
         <ParallaxComponent />
       </section>
-      <section>
+      <section id="Portfolio">
         <Services />
       </section>
-
-      <Portfolio />
+      <Portfolio /> 
       <section id="Contact">
         <Contact />
       </section>

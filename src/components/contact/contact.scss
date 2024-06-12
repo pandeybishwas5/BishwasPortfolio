@@ -28,8 +28,9 @@
     }
 
     h1 {
-      font-size: 100px;
-      line-height: 88px;
+      font-size: 60px;
+      line-height: 1.2;
+      font-weight: 600;
 
       @include mobile {
         font-size: 36px;
@@ -44,12 +45,11 @@
   .formContainer {
     flex: 1;
     position: relative;
-    
+
     @include mobile {
       padding: 50px;
       width: 80%;
     }
-
 
     .phoneSvg {
       stroke: orange;
@@ -58,7 +58,7 @@
       z-index: -1;
 
       @include mobile {
-        left: -50px; 
+        left: -50px;
       }
     }
 
@@ -70,13 +70,15 @@
       input,
       textarea {
         padding: 20px;
-        background-color: transparent;
-        border: 1px solid white;
-        color: white;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        color: #333;
         border-radius: 5px;
+        font-size: 16px;
 
-        @include mobile {
-          padding: 10px;
+        &:focus {
+          outline: none;
+          border-color: orange;
         }
       }
 
@@ -84,11 +86,27 @@
         padding: 20px;
         border: none;
         background-color: orange;
+        color: white;
         cursor: pointer;
         font-weight: 500;
-        @include mobile {
-          padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #ff9f39;
         }
+      }
+
+      .error,
+      .success {
+        font-size: 14px;
+        color: red;
+        font-weight: bold;
+      }
+
+      .success {
+        color: green;
       }
     }
   }

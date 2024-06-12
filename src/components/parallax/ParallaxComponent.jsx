@@ -30,10 +30,7 @@ const ParallaxComponent = ({ type }) => {
       className="parallax"
       ref={ref}
       style={{
-        background:
-          type === "services"
-            ? "linear-gradient(135deg, #f9f9f9, #E7E7E7)"
-            : "linear-gradient(135deg, #E7E7E7, #f9f9f9)",
+        background: "linear-gradient(135deg, #E7E7E7, #f9f9f9)",
       }}
     >
       <motion.h1 style={{ y: yText }}>
@@ -50,7 +47,7 @@ const ParallaxComponent = ({ type }) => {
         className="background"
         style={{
           y: yManOnMountain,
-          backgroundImage: `url(${type === "services" ? "/background.png" : "/man_on_mountain.png"})`,
+          backgroundImage: `url("/man_on_mountain.png")`,
         }}
       ></motion.div>
       <motion.div className="manonmountain" style={{ y: yManOnMountain }}></motion.div>

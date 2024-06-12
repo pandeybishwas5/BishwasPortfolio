@@ -1,5 +1,6 @@
 
 import "./hero.scss";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const textVariants = {
@@ -32,13 +33,25 @@ const sliderVariants = {
     x: "-220%",
     transition: {
       repeat: Infinity,
-      repeatType:"mirror",
+      repeatType: "mirror",
       duration: 20,
     },
   },
 };
 
 const Hero = () => {
+
+  const [clickedButton, setClickedButton] = useState(null);
+
+
+  const handleProjectsButtonClick = () => {
+    document.getElementById("Portfolio").scrollIntoView({ behavior: "smooth" });
+  };
+
+
+  const handleContactButtonClick = () => {
+    document.getElementById("Contact").scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="hero">
@@ -54,10 +67,18 @@ const Hero = () => {
             Software and Machine Learning Engineer
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.button
+              variants={textVariants}
+              onClick={handleProjectsButtonClick}
+            >
               My Projects
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button
+              variants={textVariants}
+              onClick={handleContactButtonClick} 
+            >
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
             variants={textVariants}

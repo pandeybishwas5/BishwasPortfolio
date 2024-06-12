@@ -2,6 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const variants = {
   initial: {
@@ -45,17 +49,19 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        "service_vmxo6yi",
+        "template_0rpp1a1",
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        "yEia0NWN3UW1xwsfZ"
       )
       .then(
         (result) => {
           setSuccess(true);
+          toast.success('Email sent successfully!');
         },
         (error) => {
           setError(true);
+          toast.error('Failed to send email. Please try again later.');
         }
       );
   };
@@ -72,15 +78,15 @@ const Contact = () => {
         <motion.h1 variants={variants}>Let’s work together</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
-          <span>hello@react.dev</span>
+          <span>pandeybishwas5@gmail.com</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
-          <span>Hello street New York</span>
+          <span>29 East St, Granville NSW 2142</span>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Phone</h2>
-          <span>+1 234 5678</span>
+          <span>+61 410 743 137</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">
@@ -120,12 +126,10 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
+          <input type="text" required placeholder="Name" name="from_name"/>
           <input type="email" required placeholder="Email" name="email"/>
           <textarea rows={8} placeholder="Message" name="message"/>
           <button>Submit</button>
-          {error && "Error"}
-          {success && "Success"}
         </motion.form>
       </div>
     </motion.div>

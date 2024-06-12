@@ -5,7 +5,6 @@ import Sidebar from "../sidebar/Sidebar";
 const Navbar = () => {
   return (
     <div className="navbar">
-      {/* Sidebar */}
       <Sidebar className="sidebar"/>
         <div className="wrapper">
           
@@ -18,10 +17,10 @@ const Navbar = () => {
             </motion.span>
 
             <div className="social">
-                <a href="#"><img src="/github.png" alt="" /></a>
-                <a href="#"><img src="/linkedin.png" alt="" /></a>
-                <a href="#"><img src="/youtube.png" alt="" /></a>
-                <a href="#"><img src="/instagram.png" alt="" /></a>
+                <a href="https://github.com/pandeybishwas5" target="_blank" rel="noopener noreferrer"><img src="/github.png" alt="github_image" /></a>
+                <a href="https://www.linkedin.com/in/bishwaspandey/" target="_blank" rel="noopener noreferrer"><img src="/linkedin.png" alt="linkedin_image" /></a>
+                <a href="https://www.youtube.com/channel/UCw9_l405uEkodmBTJVzlmzg" target="_blank" rel="noopener noreferrer"><img src="/youtube.png" alt="youtube_image" /></a>
+                <a href="https://www.instagram.com/biswas_pandey/" target="_blank" rel="noopener noreferrer"><img src="/instagram.png" alt="instagram_image" /></a>
             </div>
         </div>
     </div>
