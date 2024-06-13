@@ -1,9 +1,9 @@
 @import "../../app.scss";
 
-// Define CSS variables for consistent theming
+
 :root {
   --primary-color: #EC811B;
-  --primary-color-dark: #d16f17; // Darkened version of the primary color
+  --primary-color-dark: #d16f17; 
   --secondary-color: #2C3E50;
   --text-color: gray;
   --font-size-large: 40px;
@@ -17,21 +17,28 @@
 
 .portfolio {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 8rem;
+  background: linear-gradient(135deg, #e0e0e0 0%, #F9F9F9 100%);
+
 
   .progress {
     position: sticky;
     top: 0;
     left: 0;
-    padding-top: var(--padding-large);
+    padding-top: var(--padding-small);
     text-align: center;
     color: var(--secondary-color);
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-medium);
+    z-index: 1000;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: font-size 0.3s ease, padding 0.3s ease;
 
     @include mobile {
-      padding-bottom: var(--padding-medium);
-      font-size: var(--font-size-medium);
+      padding-top: var(--padding-medium);
+      padding-bottom: var(--padding-small);
+      font-size: var(--font-size-small);
+      z-index: 1001;
     }
 
     .progressBar {
@@ -56,7 +63,7 @@
       max-width: 1366px;
       height: 100%;
       margin: auto;
-      gap: 50px;
+      gap: 40px;
       transition: gap 0.3s ease;
 
       @include mobile {
@@ -80,6 +87,7 @@
         @include mobile {
           width: 100%;
           max-height: 300px;
+          z-index: 1000;
         }
 
         img {

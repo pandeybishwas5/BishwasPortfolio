@@ -18,7 +18,7 @@ const ParallaxComponent = ({ type }) => {
   const yJungle3 = useTransform(scrollYProgress, [0, 1], ["50%", "-60%"]);
   const yJungle2 = useTransform(scrollYProgress, [0, 1], ["40%", "-50%"]);
   const yJungle1 = useTransform(scrollYProgress, [0, 1], ["10%", "-40%"]);
-  const yMountains = useTransform(scrollYProgress, [0, 1], ["10%", "-30%"]);
+  const yMountains = useTransform(scrollYProgress, [0, 1], ["30%", "-10%"]);
   const yLogoland = useTransform(scrollYProgress, [0, 1], ["10%", "-20%"]);
 
   useEffect(() => {
