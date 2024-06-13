@@ -5,9 +5,10 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
-    title: "React Commerce",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "Next.js PDF Chat App",
+    img: "/chat.png",
+    desc: "Discover a seamless way to interact with your PDF documents using our cutting-edge app, built with NextJS 13.4, DrizzleORM, OpenAI, Stripe, TypeScript, Tailwind, and hosted on Vercel. Upload your PDFs and engage in dynamic conversations with the content, leveraging the power of AI to extract, analyze, and discuss the information within.",
+    link: "https://answer-bot-sepia.vercel.app/",
   },
   {
     id: 2,
@@ -39,7 +40,7 @@ const Single = ({ item }) => {
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <section >
+    <section className="portfolio-item">
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
@@ -48,7 +49,7 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{y}}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>See Demo</button>
+            <a href={item.link} target="_blank"><button>See Demo</button></a>
           </motion.div>
         </div>
       </div>
