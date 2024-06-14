@@ -91,10 +91,6 @@
           object-fit: cover;
           border-radius: var(--border-radius);
           transition: object-fit 0.3s ease;
-
-          @include mobile {
-            object-fit: contain;
-          }
         }
       }
 

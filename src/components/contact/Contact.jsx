@@ -58,6 +58,7 @@ const Contact = () => {
         (result) => {
           setSuccess(true);
           toast.success('Email sent successfully!');
+          formRef.current.reset();
         },
         (error) => {
           setError(true);
