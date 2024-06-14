@@ -1,6 +1,5 @@
 @import "../../app.scss";
 
-
 :root {
   --primary-color: #EC811B;
   --primary-color-dark: #d16f17; 
@@ -20,7 +19,6 @@
   margin-top: 8rem;
   background: linear-gradient(135deg, #e0e0e0 0%, #F9F9F9 100%);
 
-
   .progress {
     position: sticky;
     top: 0;
@@ -35,8 +33,6 @@
     transition: font-size 0.3s ease, padding 0.3s ease;
 
     @include mobile {
-      padding-top: var(--padding-medium);
-      padding-bottom: var(--padding-small);
       font-size: var(--font-size-small);
       z-index: 1001;
     }
@@ -46,7 +42,7 @@
       background-color: var(--primary-color);
       border-radius: 5px;
       transition: background-color 0.3s ease;
-      margin-bottom: 20px;
+      margin-bottom: 10px; 
     }
   }
 
@@ -63,12 +59,11 @@
       max-width: 1366px;
       height: 100%;
       margin: auto;
-      gap: 40px;
+      gap: 20px; 
       transition: gap 0.3s ease;
 
       @include mobile {
         flex-direction: column;
-        gap: var(--padding-small);
       }
 
       .imageContainer {
@@ -107,7 +102,7 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px; 
         transition: padding 0.3s ease, text-align 0.3s ease;
 
         @include mobile {
@@ -119,6 +114,7 @@
         h2 {
           font-size: var(--font-size-large);
           transition: font-size 0.3s ease;
+          margin: 10px 0; 
 
           @include mobile {
             font-size: var(--font-size-medium);
@@ -129,6 +125,7 @@
           color: var(--text-color);
           font-size: var(--font-size-small);
           transition: font-size 0.3s ease;
+          margin: 10px 0; 
 
           @include mobile {
             font-size: 16px;
@@ -143,6 +140,7 @@
           width: 200px;
           cursor: pointer;
           transition: background-color 0.3s ease, transform 0.3s ease;
+          margin-top: 10px; 
 
           &:hover {
             background-color: var(--primary-color-dark);

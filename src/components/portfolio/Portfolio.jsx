@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -30,7 +30,10 @@ const items = [
   },
 ];
 
-const Single = ({ item }) => {
+// Utility function to detect mobile devices
+const isMobileDevice = () => window.innerWidth <= 768;
+
+const Single = ({ item, isMobile }) => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -46,11 +49,19 @@ const Single = ({ item }) => {
           <div className="imageContainer" ref={ref}>
             <img src={item.img} alt="" />
           </div>
-          <motion.div className="textContainer" style={{y}}>
-            <h2>{item.title}</h2>
-            <p>{item.desc}</p>
-            <a href={item.link} target="_blank"><button>See Demo</button></a>
-          </motion.div>
+          {isMobile ? (
+            <div className="textContainer">
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
+              <a href={item.link} target="_blank"><button>See Demo</button></a>
+            </div>
+          ) : (
+            <motion.div className="textContainer" style={{ y }}>
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
+              <a href={item.link} target="_blank"><button>See Demo</button></a>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
@@ -59,6 +70,16 @@ const Single = ({ item }) => {
 
 const Portfolio = () => {
   const ref = useRef();
+  const [isMobile, setIsMobile] = useState(isMobileDevice());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(isMobileDevice());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -74,10 +95,14 @@ const Portfolio = () => {
     <div className="portfolio" ref={ref}>
       <div className="progress">
         <h1>Featured Works</h1>
-        <motion.div style={{ scaleX }} className="progressBar"></motion.div>
+        {isMobile ? (
+          <div className="progressBar"></div>
+        ) : (
+          <motion.div style={{ scaleX }} className="progressBar"></motion.div>
+        )}
       </div>
       {items.map((item) => (
-        <Single item={item} key={item.id} />
+        <Single item={item} key={item.id} isMobile={isMobile} />
       ))}
     </div>
   );
