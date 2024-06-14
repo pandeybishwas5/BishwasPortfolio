@@ -30,7 +30,7 @@ const items = [
   },
 ];
 
-// Utility function to detect mobile devices
+
 const isMobileDevice = () => window.innerWidth <= 768;
 
 const Single = ({ item, isMobile }) => {
@@ -95,11 +95,7 @@ const Portfolio = () => {
     <div className="portfolio" ref={ref}>
       <div className="progress">
         <h1>Featured Works</h1>
-        {isMobile ? (
-          <div className="progressBar"></div>
-        ) : (
-          <motion.div style={{ scaleX }} className="progressBar"></motion.div>
-        )}
+        <motion.div style={{ scaleX }} className="progressBar"></motion.div>
       </div>
       {items.map((item) => (
         <Single item={item} key={item.id} isMobile={isMobile} />
