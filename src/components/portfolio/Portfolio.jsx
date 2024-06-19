@@ -12,9 +12,10 @@ const items = [
   },
   {
     id: 2,
-    title: "Next.js Blog",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    title: "Disease Prediction App",
+    img: "/health.png",
+    desc: "Leveraging Flask, a Python web framework, this application integrates advanced machine learning models to predict health conditions and diagnose ailments based on patient data. It offers users, including healthcare providers and patients, personalized insights and recommendations for proactive healthcare management.",
+    link: "https://github.com/pandeybishwas5/Health_Prediction",
   },
   {
     id: 3,
