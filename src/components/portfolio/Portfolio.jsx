@@ -20,14 +20,16 @@ const items = [
   {
     id: 3,
     title: "Food Order App",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    desc: "Coming soon...",
+    img: "/food.png",
+    desc: "A responsive React application designed for seamless user interaction. This app allows users to browse a variety of menus, add items to their cart, and place orders effortlessly.",
+    link: "https://github.com/pandeybishwas5/FoodOrderApp",
   },
   {
     id: 4,
     title: "Music App",
     img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    desc: "Coming soon...",
+    desc: "Leveraging Flask, a Python web framework, this application integrates advanced machine learning models to predict health conditions and diagnose ailments based on patient data. It offers users, including healthcare providers and patients, personalized insights and recommendations for proactive healthcare management.",
+    link: "https://github.com/pandeybishwas5/Health_Prediction",
   },
 ];
 
