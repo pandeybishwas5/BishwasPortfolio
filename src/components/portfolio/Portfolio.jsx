@@ -20,7 +20,7 @@ const items = [
   {
     id: 3,
     title: "React Food Order App",
-    img: "/food.png",
+    img: "/foodorder.png",
     desc: "A responsive React application designed for seamless user interaction. This app allows users to browse a variety of menus, add items to their cart, and place orders effortlessly.",
     link: "https://github.com/pandeybishwas5/FoodOrderApp",
   },
