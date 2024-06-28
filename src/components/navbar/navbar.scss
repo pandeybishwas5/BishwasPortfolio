@@ -1,11 +1,17 @@
 @import "../../app.scss";
 
 .navbar {
-  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
   display: flex;
   align-items: center;
   background-color: var(--background-color);
   color: var(--text-color);
+  
 
   .sidebar {
     margin-right: 120px; 

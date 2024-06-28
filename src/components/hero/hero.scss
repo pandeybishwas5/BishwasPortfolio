@@ -6,6 +6,11 @@
   background: var(--background-color);
   position: relative;
   color: var(--text-color);
+  padding-top: 70px;
+
+  @include mobile {
+    padding-top: 100px;
+  }
 
   .wrapper {
     max-width: 1366px;

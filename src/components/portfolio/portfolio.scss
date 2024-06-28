@@ -76,6 +76,7 @@
 
       .imageContainer {
         flex: 1;
+        position: relative;
         height: 50%;
         overflow: hidden;
         border-radius: var(--border-radius);
@@ -99,6 +100,22 @@
           object-fit: cover;
           border-radius: var(--border-radius);
           transition: object-fit 0.3s ease;
+        }
+
+        body.dark-mode &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); 
+          transition: opacity 0.8s ease;
+          pointer-events: none; 
+        }
+  
+        &:hover::before {
+          opacity: 0;
         }
       }
 
