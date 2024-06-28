@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './app.scss';
 import Hero from './components/hero/Hero';
 import Navbar from './components/navbar/Navbar';
@@ -7,8 +7,11 @@ import ParallaxComponent from './components/parallax/ParallaxComponent';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const App = () => {
+
+
   return (
     <div>
       <ToastContainer />

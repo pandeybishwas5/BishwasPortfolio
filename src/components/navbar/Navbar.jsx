@@ -1,8 +1,26 @@
 import "./navbar.scss"
 import {motion} from "framer-motion";
 import Sidebar from "../sidebar/Sidebar";
+import { useState, useEffect } from "react";
+import DarkMode from "../DarkMode/DarkMode";
 
 const Navbar = () => {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem('dark-mode') === 'true';
+    setDarkMode(savedMode);
+    document.body.classList.toggle('dark-mode', savedMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    localStorage.setItem('dark-mode', !darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
+  };
+
+
   return (
     <div className="navbar">
       <Sidebar className="sidebar"/>
@@ -15,6 +33,10 @@ const Navbar = () => {
                 >
                     BISHWAS
             </motion.span>
+
+            <div className="darkmode">
+            <DarkMode darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            </div>
 
             <div className="social">
                 <a href="https://github.com/pandeybishwas5" target="_blank" rel="noopener noreferrer"><img src="/github.png" alt="github_image" /></a>

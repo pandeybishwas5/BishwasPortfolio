@@ -3,8 +3,9 @@
 .hero {
   height: calc(100vh - 100px);
   overflow: hidden;
-  background: linear-gradient(135deg, #F9F9F9 0%, #e0e0e0 100%);
+  background: var(--background-color);
   position: relative;
+  color: var(--text-color);
 
   .wrapper {
     max-width: 1366px;
@@ -37,7 +38,7 @@
 
       h1 {
         font-size: 88px;
-        color: #1C1C1E;
+        
 
         @include mobile {
           font-size: 36px;
@@ -51,19 +52,19 @@
       .buttons {
         z-index: 5;
         button {
-          padding: 20px;
-          border: 2px solid #2C3E50;
-          border-radius: 10px;
-          background-color: transparent;
-          color: #2C3E50;
-          margin-right: 20px;
-          cursor: pointer;
-          font-weight: 400;
-          transition: background-color 0.3s;
+            padding: 20px;
+            border: 2px solid var(--text-color);
+            border-radius: 10px;
+            background-color: transparent;
+            color: var(--text-color);
+            margin-right: 20px;
+            cursor: pointer;
+            font-weight: 400;
+            transition: background-color 0.3s;
 
           &:hover {
-            background-color: #2C3E50; 
-            color: white; 
+            background-color: var(--text-color); 
+            color: var(--background-color); 
           }
         }
       }
@@ -95,6 +96,7 @@
 
     &:hover {
       animation: bounce 0.5s infinite alternate;
+      cursor: pointer;
     }
 
     @keyframes bounce {

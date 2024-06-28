@@ -8,12 +8,13 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #F9F9F9 0%, #e0e0e0 100%);
+  background: var(--background-color);
 
   h1 {
     font-size: 80px;
     position: relative;
     z-index: 12;
+    color: var(--text-color); // Use CSS variable for text color
 
     @include mobile {
       font-size: 72px;

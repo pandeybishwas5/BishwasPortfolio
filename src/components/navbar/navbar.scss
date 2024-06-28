@@ -4,6 +4,8 @@
   height: 100px;
   display: flex;
   align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
 
   .sidebar {
     margin-right: 120px; 
@@ -29,6 +31,7 @@
 
     span {
       font-weight: bold;
+      color: var(--text-color);
 
       @include mobile {
         display: none;
@@ -38,6 +41,12 @@
     .social {
       display: flex;
       gap: 20px;
+
+      @include mobile {
+        gap: 5px;
+        margin-left: 30px;
+        padding-left: 30px;
+      }
 
       img {
         width: 22px;

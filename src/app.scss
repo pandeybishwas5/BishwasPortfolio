@@ -1,38 +1,63 @@
-html{
+html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scroll-snap-align: start;
-}
-
-
-*{
+  }
+  
+  * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "DM Sans", sans-serif;
-}
+  }
+  
+  :root {
+    --background-color: #F9F9F9;
+    --text-color: #1C1C1E;
+    --button-bg-color: transparent;
 
-body{
-    background-color: #F9F9F9;
-    color: #1C1C1E;
-}
-
-a {
+  }
+  
+  body.dark-mode {
+    --background-color: #1A1A1A;
+    --text-color: #CCCCCC;
+    --button-text-color: #F9F9F9;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  a {
     text-decoration: none;
     color: inherit;
-}
-
-
-section{
+  }
+  
+  section {
     height: 100vh;
     scroll-snap-align: start;
-    
-}
-
+  }
+  
+  @mixin mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
   
 
-@mixin mobile {
-    @media (max-width: 768px) {
-        @content;
+  button {
+    background-color: var(--button-bg-color);
+    border: 2px solid var(--button-border-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  
+    &:hover {
+      background-color: var(--button-border-color);
+      color: var(--button-bg-color);
     }
-}
+  }
+  

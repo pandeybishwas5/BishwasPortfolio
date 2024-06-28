@@ -17,20 +17,22 @@
 .portfolio {
   position: relative;
   margin-top: 8rem;
-  background: linear-gradient(135deg, #e0e0e0 0%, #F9F9F9 100%);
+  background: var(--background-color);
+  color: var(--text-color);
 
   .progress {
     position: sticky;
     top: 0;
     left: 0;
-    padding-top: var(--padding-small);
+    padding-top: var(--padding-large);
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--text-color);
     font-size: var(--font-size-medium);
     z-index: 1000;
-    background-color: #F9F9F9;
+    background: var(--background-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: font-size 0.3s ease, padding 0.3s ease;
+    margin-bottom: 60px;
 
     @include mobile {
       font-size: var(--font-size-small);
@@ -43,7 +45,13 @@
       border-radius: 5px;
       transition: background-color 0.3s ease;
       margin-bottom: 10px; 
+
+      body.dark-mode & {
+        background-color: var(--text-color);
+      }
     }
+
+    
   }
 
   .container {

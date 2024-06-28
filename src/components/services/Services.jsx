@@ -29,7 +29,7 @@ const variants = {
 const Services = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.2, // Adjust this value as needed
+    threshold: 0.2, 
     triggerOnce: true,
   });
 

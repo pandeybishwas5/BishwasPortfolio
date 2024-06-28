@@ -34,7 +34,7 @@ const sliderVariants = {
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
-      duration: 20,
+      duration: 30,
     },
   },
 };
@@ -94,7 +94,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Web Developer Software Developer Machine Learning Engineer
+        Software Developer Machine Learning Engineer Web Developer
       </motion.div>
       <div className="imageContainer">
         <img src="/hero.png" alt="Hero image" />
