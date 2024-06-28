@@ -176,7 +176,7 @@
       width: 250px;
       padding: 2rem;
       margin: 1rem;
-      background-color: var(--background-color-light); /* Default background color */
+      background-color: var(--background-color-light); 
       border-radius: 10px;
       text-align: center;
       transition: background-color 0.3s, color 0.3s;
@@ -198,6 +198,8 @@
         
         background-color: #ec811b;
         color: #fff;
+        
+        
 
         
         body.dark-mode & {

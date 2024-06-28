@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { FaCode, FaBrain, FaChartLine, FaLaptopCode } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
-const variants = {
+const listContainerVariants = {
   initial: {
     y: 500,
     opacity: 0,
@@ -13,7 +13,7 @@ const variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 1.5,
       staggerChildren: 0.1,
     },
   },
@@ -42,22 +42,16 @@ const Services = () => {
   }, [controls, inView]);
 
   return (
-    <motion.div
-      className="services"
-      ref={ref}
-      initial="initial"
-      animate={controls}
-      variants={variants}
-    >
-      <motion.div className="textContainer" variants={variants}>
+    <motion.div className="services" ref={ref}>
+      <div className="textContainer">
         <p>
           I focus on developing innovative solutions
           <br /> that drive business success
         </p>
         <hr />
-      </motion.div>
+      </div>
       
-      <motion.div className="titleContainer" variants={variants}>
+      <div className="titleContainer">
         <div className="title">
           <img src="/people.webp" alt="People" />
           <h1>
@@ -70,9 +64,14 @@ const Services = () => {
           </h1>
           <button className="techStackBtn">My Tech Stack</button>
         </div>
-      </motion.div>
+      </div>
       
-      <motion.div className="listContainer" variants={variants}>
+      <motion.div
+        className="listContainer"
+        initial="initial"
+        animate={controls}
+        variants={listContainerVariants}
+      >
         {[
           { title: "Programming Languages", content: "Python, Java, C++, JavaScript", icon: <FaCode /> },
           { title: "Machine Learning Frameworks", content: "TensorFlow, PyTorch, scikit-learn", icon: <FaBrain /> },
@@ -82,7 +81,7 @@ const Services = () => {
           <motion.div
             className="box"
             key={index}
-            variants={variants}
+            variants={listContainerVariants}
           >
             <div className="icon">{item.icon}</div>
             <h2>{item.title}</h2>
