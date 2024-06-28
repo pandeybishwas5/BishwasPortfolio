@@ -1,9 +1,14 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import "./parallax.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const Parallax = ({ type, darkMode }) => {
+const Parallax = ({ darkMode }) => {
   const ref = useRef();
+  const [key, setKey] = useState(""); // State to force re-render
+
+  useEffect(() => {
+    setKey(darkMode ? "planets" : "sun"); // Update key based on darkMode
+  }, [darkMode]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -22,7 +27,7 @@ const Parallax = ({ type, darkMode }) => {
       }}
     >
       <motion.h1 style={{ y: yText }}>
-        {type = "My Services"}
+        My Services
       </motion.h1>
       <motion.div className="mountains"></motion.div>
       <motion.div
