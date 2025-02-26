@@ -12,24 +12,24 @@ const items = [
   },
   {
     id: 2,
+    title: "ATMEX Restaurant Website",
+    img: "/thumbnail.png",
+    desc: "I designed a responsive front end and a robust Django backend, increasing mobile user engagement by 65%. By building and integrating REST APIs with Django, I optimized server performance, reducing response time by 30%. I implemented secure Stripe API integration, ensuring 100% error-free payment transactions, and utilized PostgreSQL to manage user accounts, orders, and menu data with zero data loss. Additionally, I developed user authentication and role-based access control to enhance platform security and usability. Finally, I deployed the application on Contabo VPS, enabling seamless live access and testing.",
+    link: "https://atmex-minto.com",
+  },
+  {
+    id: 3,
     title: "Disease Prediction App",
     img: "/health.png",
     desc: "Leveraging Flask, a Python web framework, this application integrates advanced machine learning models to predict health conditions and diagnose ailments based on patient data. It offers users, including healthcare providers and patients, personalized insights and recommendations for proactive healthcare management.",
     link: "https://github.com/pandeybishwas5/Health_Prediction",
   },
   {
-    id: 3,
+    id: 4,
     title: "React Food Order App",
     img: "/foodorder.png",
     desc: "A responsive React application designed for seamless user interaction. This app allows users to browse a variety of menus, add items to their cart, and place orders effortlessly.",
     link: "https://github.com/pandeybishwas5/FoodOrderApp",
-  },
-  {
-    id: 4,
-    title: "Full Stack Restaurant App",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    desc: "Leveraging Flask, a Python web framework, this application integrates advanced machine learning models to predict health conditions and diagnose ailments based on patient data. It offers users, including healthcare providers and patients, personalized insights and recommendations for proactive healthcare management.",
-    link: "https://github.com/pandeybishwas5/Health_Prediction",
   },
 ];
 
